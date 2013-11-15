@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="payment.master.cs" Inherits="Master_Payment" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <title>HangOut! Singapore</title>
+   <link rel="stylesheet" type="text/css" href="../Styles/main.css" />
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script type='text/javascript'>
+    $(function () {
+        var $sidebar = $("#customersupport"),
+        $window = $(window),
+        offset = $sidebar.offset(),
+        topPadding = 15;
+        $window.scroll(function () {
+            if ($window.scrollTop() > offset.top) {
+                $sidebar.stop().animate({
+                    marginTop: 50
+                });
+            } else {
+                $sidebar.stop().animate({
+                    marginTop: 30
+                });
+            }
+        });
+
+    });
+</script> 
+</head>
+<body>
+    <form id="form1" runat="server">
+ <div>
+    <a href="default.aspx"><div id="leftbar"></div></a>
+<div id="rightbar"></div>
+<div id="content">
+<div id="middleoffer">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+</div>
+</div>
+<div id="lastfooter2">
+<div id="bottomleftcorner"></div>
+<div id="bottomrightcorner"></div>
+</div>
+<div id="customersupport">
+<div id="cstop"></div>
+<div id="csmid">
+<img src="Images/Site/ls.png" />
+<p />Live Support are available during office hours:
+<p />Mon-Fri: 8am - 11pm
+<br/>Sat-Sun: 8am - 5pm
+<p />During office hours: Call +65 6550 0001
+<br/>After office hours: Call +65 9829 5629
+<p />Current Operator is:
+    <br/><asp:Label ID="Label1" runat="server" Text="Online" Font-Size="24pt" 
+            ForeColor="Red"></asp:Label>
+    <br/><asp:Button ID="Button2" runat="server" Text="Start Conversation with Operator" />
+</div>
+<div id="csbottom"></div>
+</div>
+    </form>
+</body>
+</html>

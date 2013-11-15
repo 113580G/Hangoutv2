@@ -1,0 +1,101 @@
+﻿
+#registerf
+{
+    list-style-type:none;
+    width:570px;
+    height: 400px;
+    text-align:right;
+}
+
+#registerf li
+{
+    margin-top:20px;
+    text-align:right;
+}
+#registerf li.left
+{
+    float :left;
+    text-align:right;
+}
+#registerf li.right
+{
+    float :right;
+}
+
+#innerleft 
+{
+    margin-left:45px;
+}
+#innerleft2
+{
+    margin-left:65px;
+}
+#innerleft3
+{
+    margin-left:60px;
+}
+#innerleft4
+{
+    margin-left:43px;
+}
+#innerleft5
+{
+    margin-left:40px;
+}
+#innerleft6
+{
+    margin-left:49px;
+}
+#innerleft7
+{
+    margin-left:6px;
+}
+#rform 
+{
+    background-color:White;
+    width:auto;
+    height:auto;
+    color:#585858;
+}
+#submitbutton
+{
+margin-left:115px;
+margin-right:20px;
+}
+#submitbutton img
+{
+margin-right:20px;
+}
+#registerf2
+{
+    list-style-type:none;
+    width:300px;
+    height:150px;
+    text-align:right;
+    margin:0px;
+    padding:0px;
+    float:left;
+}
+#registerf2 li
+{
+margin-top:10px;
+}
+#submitbutton2
+{
+margin-left:0px;
+margin-right:35px;
+}
+#submitbutton2 Button1
+{
+margin-left:40px;
+margin-right:0px;
+}
+#rform2
+{
+    background-color:White;
+    width:auto;
+    height:149px;
+    color:#585858;
+    margin-left :-35px;
+    margin-top:0px;
+}

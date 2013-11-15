@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminUser.master.cs" Inherits="Master_adminUser" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta charset="utf-8">
+    <title>HangOut! Singapore</title>
+    <link rel="stylesheet" type="text/css" href="../Styles/main.css" />
+    <link rel="stylesheet" href="../Styles/lefrog/jquery.ui.all.css" />
+    <script type="text/javascript" src="Script/Jquery/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="Script/Jquery/jquery.bgiframe-2.1.2.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.ui.mouse.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.ui.button.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.ui.draggable.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.ui.position.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.ui.dialog.js"></script>
+   	<script type="text/javascript" src="Script/Javascript/CalendarPopup.js"></script>
+    <script type="text/javascript" src="Script/Jquery/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="Script/Jquery/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="Script/Jquery/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.effects.core.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.effects.blind.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.effects.bounce.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.effects.clip.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.effects.drop.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.effects.fold.js"></script>
+	<script type="text/javascript" src="Script/Jquery/jquery.effects.slide.js"></script>
+    <script type="text/javascript" src="Script/Jquery/jquery.ui.datepicker.js"></script>
+     <link rel="stylesheet" type="text/css" href="../Styles/dialog/resources/css/jquery.toastmessage.css" />
+   <link rel="stylesheet" type="text/css" href="../Styles/main.css" />
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+   <script type="text/javascript" src="Styles/dialog/javascript/jquery.toastmessage.js"></script>
+    <script type="text/javascript" src="Script/Jquery/jquery.ui.datepicker.js"></script>
+	<script type="text/javascript">
+     $(document).ready(function(){
+                 Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+            function EndRequestHandler(sender, args) {
+	        $(".dateSpicker").datepicker({ 
+            showAnim: 'slide',
+            minDate: 3,
+            maxDate: "+3M",
+            showButtonPanel: true, 
+            numberOfMonths: 3,
+	        });
+            }
+	    })
+             $(document).ready(function(){
+                 Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+            function EndRequestHandler(sender, args) {
+             $(document).ready(function(){
+	        $(".dateEpicker").datepicker({ 
+            showAnim: 'slide',
+            minDate: 3,
+            maxDate: "+3M",
+            showButtonPanel: true, 
+            numberOfMonths: 3,
+	        });
+            }
+	    })
+   function showInputError() {
+       $().toastmessage('showToast', {
+           text: 'Service: Please insert only numbers',
+           sticky: false,
+           position: 'middle-center',
+           type: 'warning',
+       }
+       );
+   }
+      function showInputError2() {
+       $().toastmessage('showToast', {
+           text: 'Activities: Please insert only numbers',
+           sticky: false,
+           position: 'middle-center',
+           type: 'warning',
+       }
+       );
+   }
+    function showNoValue() {
+     $().toastmessage('showToast', { 
+     text: 'Please insert a value for service name and detail',
+     sticky: false,
+     position: 'middle-center',
+           type: 'warning',
+      }
+       );
+   }
+       function showNoValue2() {
+     $().toastmessage('showToast', { 
+     text: 'Please insert a value for activity name and detail',
+     sticky: false,
+     position: 'middle-center',
+           type: 'warning',
+      }
+       );
+   }
+        </script> 
+</head>
+<body>
+    <form id="form1" runat="server">
+<div id="headeradmin"></div>
+<div id="adminbody">
+<div id="adminmenu"> <a href = "AdminProd.aspx">Overview</a> | <a href = "Pud.aspx">PM</a>  | <a href= "Sam.aspx">SAM</a>  | <a href ="UDPUD.aspx">UDM </a>|<a href = "AdminST.aspx"> Support Ticket</a> | <a href = "TAdmin.aspx">Testimonial</a> | <a href = "AdminJA.aspx">Job Application</a> | <a href = "AdminNewsletter.aspx">Newsletter</a>  | <a href = "AdContactus.aspx">Contact Us</a> |<a href = "AdminContact.aspx">Customer Details</a> | <a href = "AdminParticular.aspx">Ad Details</a> 
+    | <a href = "AdminReg.aspx">Ad Registration</a><p style="font-weight: bold; color: #3366FF">
+        Welcome Admin, you&#39;re logged in as 
+        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Underline="True" 
+            ForeColor="Red"></asp:Label>
+        !     
+        <asp:Button ID="Button1" 
+        runat="server" style="margin-top: 7px" Text="Log-Out" Width="73px" 
+        onclick="Button1_Click" />
+&nbsp;</p>
+&nbsp;<hr align="left" style="width: 949px" />
+</div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+<div id="footeradmin"></div>
+    </form>
+</body>
+</html>

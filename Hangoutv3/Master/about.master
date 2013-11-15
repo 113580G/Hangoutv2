@@ -1,0 +1,157 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="about.master.cs" Inherits="Master_inner" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <title>HangOut! Singapore</title>
+   <link rel="stylesheet" type="text/css" href="../Styles/colorbox.css" />
+   <link rel="stylesheet" href="../Styles/main.css" />
+   <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+        <script type='text/javascript' src="Script/Colorbox/jquery.colorbox.js"></script>
+        <script type='text/javascript' src="Script/Colorbox/jquery.colorbox-min.js"></script>
+<script type='text/javascript'>
+    $(function () {
+        var $sidebar = $("#customersupport"),
+        $window = $(window),
+        offset = $sidebar.offset(),
+        topPadding = 15;
+        $window.scroll(function () {
+            if ($window.scrollTop() > offset.top) {
+                $sidebar.stop().animate({
+                    marginTop: 50
+                });
+            } else {
+                $sidebar.stop().animate({
+                    marginTop: 30
+                });
+            }
+        });
+
+    });
+    jQuery(document).ready(function () {
+        $(".ajax").colorbox({ iframe: true, width: "680px", height: "570px", scrolling: "false" });
+        $(".retrieve").colorbox({ iframe: true, width: "370px", height: "250px", scrolling: "false" });
+    });
+    var originalClose = $().colorbox.close;
+    $().colorbox.close = function () {
+        var response;
+        if ($('#cboxLoadedContent').find('form').length > 0) {
+            response = confirm('Do you want to close this window?');
+            if (!response) {
+                return; // Do nothing.
+            }
+        }
+        originalClose();
+    };
+</script> 
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="logindiv">
+    <asp:Panel ID="unlog" runat="server">
+    <span class="top">
+Email:<asp:TextBox ID="emailLogin" runat="server" Height="15px"></asp:TextBox>
+Password:<asp:TextBox ID="passwordLogin" runat="server" Height="15px" 
+            TextMode="Password"></asp:TextBox> 
+        <asp:Button ID="login" runat="server" Text="Login" onclick="validateLogin" /> 
+|  <a class='retrieve' href="Retrieve.aspx">Forgot Password</a> | <a class='ajax' href="Register.aspx">Register </a>
+        </span>
+        </asp:Panel>
+    <asp:Panel ID="log" runat="server" Visible="False">
+    <span id="top2">
+    Hello <asp:Label ID="fName" runat="server"></asp:Label> | <a href="Product.aspx">Buy Product</a> | <a href="Packages.aspx">Buy Package</a> | <a href="Vieworders.aspx">View Transaction History</a> | <a href="SupportTicket.aspx">Support Ticket</a> | <a href="Contactus.aspx">Contact Us Form</a> | <a href="AddTestimonial.aspx">Testimonials</a>
+        | <asp:LinkButton ID="LogOutLink" runat="server" onclick="LogOutlink">LogOut</asp:LinkButton>
+    </span></asp:Panel>
+</div>
+<div id="body1">
+<a href="Default.aspx"><div id= "leftbar"></div></a>
+<div id= "rightbar">
+<ul id = "topbar">
+<li id = "home2"><a href="Default.aspx">Home</a></li>
+<li id = "about2"><a href="Aboutus.aspx">About</a></li>
+<li id = "product"><a href="Product.aspx">Product</a></li>
+<li id = "packages"><a href="Packages.aspx">Packages</a></li>
+<li id = "contactus"><a href="Contactus.aspx">Contact Us</a></li>
+<li id = "memberarea"><a href="Login.aspx">Member Area</a></li>
+</ul>
+</div>
+<div id ="header2">
+<a href="packages.aspx"><div id ="click2"></div></a>
+</div>
+<div id="content2">
+    <div id="sidebar3">
+    <div id="sidenav"></div>
+    <ul id="sidebarlinks">
+    <li><a href="Aboutus.aspx">About Us</a></li>
+    <li><a href="Contactus.aspx">Contact Us</a></li>
+    <li><a href="Packages.aspx">Our Packages></a></li>
+    <li><a href="Product.aspx">Our Products</a></li>
+    <li><a href="Jobapplication.aspx">Job Application</a></li>
+    <li><a href="Testimonials.aspx">Testimonials</a></li>
+    </ul>
+    <div id="ourclient"></div>
+    </div>
+    <div id="contentright3">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder> 
+    </div>
+    </div>
+<div id ="footer">
+<div id ="footercontent">
+<div id="browsesite">
+<h2>Browse site</h2>
+<ul id ="browsesiteul">
+<li><a href="Aboutus.aspx">About Our Company</a></li>
+<li><a href="Contactus.aspx">Contact Us</a></li>
+<li><a href="Packages.aspx">Our Packages</a></li>
+<li><a href="Product.aspx">Our Products</a></li>
+<li><a href="Jobapplication.aspx">Job Application</a></li>
+<li><a href="Testimonials.aspx">Testimonials</a></li>
+</ul>
+</div>
+<div id="location">
+<h2>Location</h2>
+<iframe width="290" height="165" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Nanyang+Polytechnic+Ang+Mo+Kio+Avenue+8+Singapore&amp;aq=0&amp;oq=Nanyang+pol&amp;sll=1.29885,103.850305&amp;sspn=0.017484,0.032637&amp;t=h&amp;ie=UTF8&amp;hq=Nanyang+Polytechnic+Ang+Mo+Kio+Avenue+8+Singapore&amp;ll=1.381024,103.850201&amp;spn=0.008881,0.006295&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Nanyang+Polytechnic+Ang+Mo+Kio+Avenue+8+Singapore&amp;aq=0&amp;oq=Nanyang+pol&amp;sll=1.29885,103.850305&amp;sspn=0.017484,0.032637&amp;t=h&amp;ie=UTF8&amp;hq=Nanyang+Polytechnic+Ang+Mo+Kio+Avenue+8+Singapore&amp;ll=1.381024,103.850201&amp;spn=0.008881,0.006295" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</div>
+<div id="location2">
+<ul id="address">
+<li id="add">Address: 180 Ang Mo Kio Avenue 8 </li>
+<li id="add2">Singapore 569830</li>
+<li id="hotline">Hotline: +65 550 0001</li>
+<li id="mobile">Mobile: +65 9829 5629</li>
+<li id="fax">Fax: +65 550 0002</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="lastfooter">
+<div id="leftfooter">
+Copyright © HangOut! Singapore. All rights reserved. Designed by Ariff
+</div>
+<div id="rightfooter">
+<img src="Images/Buttons/facebook.png" />
+<img src="Images/Buttons/in.png" />
+<img src="Images/Buttons/twitter.png" />
+</div>
+</div>
+</div>
+<div id="customersupport">
+<div id="cstop"></div>
+<div id="csmid">
+<img src="Images/Site/ls.png" />
+<p />Live Support are available during office hours:
+<p />Mon-Fri: 8am - 11pm
+<br/>Sat-Sun: 8am - 5pm
+<p />During office hours: Call +65 6550 0001
+<br/>After office hours: Call +65 9829 5629
+<p />Current Operator is:
+    <br/><asp:Label ID="Label1" runat="server" Text="Online" Font-Size="24pt" 
+            ForeColor="Red"></asp:Label>
+    <br/><asp:Button ID="Button2" runat="server" Text="Start Conversation with Operator" />
+</div>
+<div id="csbottom"></div>
+</div>
+    </form>
+</body>
+</html>

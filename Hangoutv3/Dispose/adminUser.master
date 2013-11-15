@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminUser.master.cs" Inherits="Master_adminUser" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>HangOut! Singapore</title>
+   <link rel="stylesheet" type="text/css" href="main.css" />
+   <link rel="stylesheet" type="text/css" href="Styles/AdminReg.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+<div id="headeradmin"></div>
+<div id="adminbody">
+<p style="font-weight: bold; color: #3366FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Welcome 
+    Admin, you&#39;re logged in as <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Underline="True" 
+        ForeColor="Red"></asp:Label>!</p>
+        
+<div id="adminmenu"> |<a href = "AdminProd.aspx">Overview</a> | PM | SAM | UDM | Support Ticket | Live Support | <a href = "TAdmin.aspx">Testimonial</a> | Job Application | <a href = "AdminNewsletter.aspx">Newsletter</a>  | <a href = "AdContactus.aspx">Contact Us</a> |<a href = "AdminContact.aspx">Customer Details</a> | <a href = "AdminParticular.aspx">Admin Details</a> |<br />| <a href = "AdminReg.aspx">Admin Registration</a> | 
+    <br />
+    <asp:Button ID="Button1" 
+        runat="server" style="margin-top: 7px" Text="Log-Out" Width="73px" 
+        onclick="Button1_Click" />
+&nbsp;<hr align="left" style="width: 949px" />
+    
+</div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            
+        
+            <p>
+                &nbsp;</p>
+        
+            
+        
+        </asp:ContentPlaceHolder>
+    </div>
+<div id="footeradmin"></div>
+    </form>
+</body>
+</html>
